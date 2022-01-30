@@ -1,18 +1,18 @@
-// pages/blog/[id].js
 import { client } from "../../libs/client";
 import Aside from "../../components/aside";
+import Main from "../../components/main";
 
 export default function BlogId({ blog, categories }) {
   return (
     <>
-      <main>
+      <Main>
         <h1>{blog.title}</h1>
         <div><img src={blog.image.url} alt=""/></div>
         <p>{blog.category && `${blog.category.name}`}</p>
         <div dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}/>
-      </main>
+      </Main>
       <Aside categories={categories}/>
     </>
   );

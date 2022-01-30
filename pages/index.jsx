@@ -1,14 +1,15 @@
 import { client } from "../libs/client";
 import Aside from '../components/aside';
 import ArticleList from '../components/articleList';
+import Main from "../components/main";
 
 export default function Home({ blog, categories }) {
   return (
     <>
-      <main>
-        <h1>記事一覧</h1>
+      <Main>
+        <h1 className="c-heading01">記事一覧</h1>
         <ArticleList blog={blog}/>
-      </main>
+      </Main>
       <Aside categories={categories}/>
     </>
   );

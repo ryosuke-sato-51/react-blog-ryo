@@ -1,14 +1,15 @@
 import { client } from "../libs/client";
 import Aside from "../components/aside";
 import ArticleList from "../components/articleList";
+import Main from "../components/main";
 
 export default function category({ blog, categories }) {
   return (
     <>
-      <main>
+      <Main>
         <h1>{blog[0].category.name}</h1>
         <ArticleList blog={blog}/>
-      </main>
+      </Main>
       <Aside categories={categories}/>
     </>
   );
