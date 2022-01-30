@@ -1,24 +1,16 @@
-// pages/[category].js
 import { client } from "../libs/client";
-import Link from "next/link";
+import Aside from "../components/aside";
+import ArticleList from "../components/articleList";
 
-export default function category({ blog }) {
+export default function category({ blog, categories }) {
   return (
-    <div>
-      <h1>{blog[0].category.name}</h1>
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>
-                <img src={blog.image.url} alt=""/>
-                <span>{blog.title}</span>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <main>
+        <h1>{blog[0].category.name}</h1>
+        <ArticleList blog={blog}/>
+      </main>
+      <Aside categories={categories}/>
+    </>
   );
 }
 
@@ -35,10 +27,12 @@ export const getStaticProps = async (context) => {
   const currentCategoryData = blogData.contents.filter((content) => {
     return content.category.slug === categoryName;
   })
+  const categoriesData = await client.get({ endpoint: "categories" });
 
   return {
     props: {
       blog: currentCategoryData,
+      categories: categoriesData.contents,
     },
   };
 };
