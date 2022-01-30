@@ -17,7 +17,10 @@ export default function Home({ blog, categories }) {
         {blog.map((blog) => (
           <li key={blog.id}>
             <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
+              <a>
+                <img src={blog.image.url} alt=""/>
+                <span>{blog.title}</span>
+              </a>
             </Link>
           </li>
         ))}
@@ -26,7 +29,6 @@ export default function Home({ blog, categories }) {
   );
 }
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
   const blogData = await client.get({ endpoint: "blog" });
   const categoriesData = await client.get({ endpoint: "categories" });

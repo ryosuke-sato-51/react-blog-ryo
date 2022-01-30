@@ -10,7 +10,10 @@ export default function category({ blog }) {
         {blog.map((blog) => (
           <li key={blog.id}>
             <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
+              <a>
+                <img src={blog.image.url} alt=""/>
+                <span>{blog.title}</span>
+              </a>
             </Link>
           </li>
         ))}
@@ -19,7 +22,6 @@ export default function category({ blog }) {
   );
 }
 
-// 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
@@ -27,7 +29,6 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const categoryName = context.params.category;
   const blogData = await client.get({endpoint: "blog"});

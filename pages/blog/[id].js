@@ -5,7 +5,7 @@ export default function BlogId({ blog }) {
   return (
     <main>
       <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+      <div><img src={blog.image.url} alt=""/></div>
       <p>{blog.category && `${blog.category.name}`}</p>
       <div
         dangerouslySetInnerHTML={{
@@ -16,7 +16,6 @@ export default function BlogId({ blog }) {
   );
 }
 
-// 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
@@ -24,7 +23,6 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
