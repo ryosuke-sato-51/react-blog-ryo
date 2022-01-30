@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="336a1883-6736-420b-a956-cc7b73cf3964" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/blog/[id].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/[id].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/[category].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +31,11 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -38,7 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643529672902</updated>
       <workItem from="1643529674157" duration="1032000" />
-      <workItem from="1643531099079" duration="1883000" />
+      <workItem from="1643531099079" duration="11129000" />
     </task>
     <servers />
   </component>
