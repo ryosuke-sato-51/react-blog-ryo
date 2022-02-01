@@ -30,6 +30,9 @@ export default function ArticleList({ blog }) {
           justify-content: space-between;
           text-decoration: none;
         }
+        .c-articleList__link:hover{
+          opacity: 0.7;
+        }
         .c-articleList__link img{
           width: calc(300 / 800 * 100%);
           height: auto;
